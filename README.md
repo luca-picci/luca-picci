@@ -1,6 +1,6 @@
 🧑‍💻 Web developer
 
-🏢 @coranto-informatica
+🏢 [@coranto-informatica](https://github.com/coranto-informatica)
 <!--
 **luca-picci/luca-picci** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
