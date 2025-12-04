@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" role="img" aria-label="Performance score 59">
+  <defs>
+    <style>
+      .label { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 11px; fill: #555; }
+      .score { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 26px; font-weight: 600; fill: #202124; }
+    </style>
+  </defs>
+
+  <!-- Sfondo -->
+  <circle
+    cx="60"
+    cy="60"
+    r="45"
+    fill="none"
+    stroke="#e6e6e6"
+    stroke-width="10"
+  />
+
+  <!-- Anello di progresso -->
+  <circle
+    cx="60"
+    cy="60"
+    r="45"
+    fill="none"
+    stroke="#ffa400"
+    stroke-width="10"
+    stroke-linecap="round"
+    stroke-dasharray="166.818569905618 115.92476891746338"
+    transform="rotate(-90 60 60)"
+  />
+
+  <!-- Testo punteggio -->
+  <text
+    x="60"
+    y="68"
+    text-anchor="middle"
+    class="score"
+  >
+    59
+  </text>
+
+  <!-- Label sotto -->
+  <text
+    x="60"
+    y="110"
+    text-anchor="middle"
+    class="label"
+  >
+    Performance
+  </text>
+</svg>
