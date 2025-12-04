@@ -35,9 +35,9 @@ function createGaugeSVG(label, score) {
   const rounded = Math.round(score);
   const color = scoreColor(rounded);
 
-  const size = 120;
+  const size = 140;        
   const center = size / 2;
-  const radius = 45;
+  const radius = 48;
   const strokeWidth = 10;
   const circumference = 2 * Math.PI * radius;
   const progress = (rounded / 100) * circumference;
@@ -45,49 +45,70 @@ function createGaugeSVG(label, score) {
   return `
 <svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" role="img" aria-label="${label} score ${rounded}">
   <defs>
+    <!-- Ombra molto leggera e morbida -->
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#00000055"/>
+    </filter>
+
     <style>
-      .label { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 11px; fill: #555; }
-      .score { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 26px; font-weight: 600; fill: #202124; }
+      .label {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 12px;
+        fill: #5f6368;
+      }
+      .score {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 28px;
+        font-weight: 600;
+        fill: #202124;
+      }
     </style>
   </defs>
 
-  <!-- Sfondo -->
+  <rect
+    x="10"
+    y="10"
+    width="${size - 20}"
+    height="${size - 20}"
+    rx="14"
+    fill="#ffffff"
+    stroke="#dadce0"
+    filter="url(#cardShadow)"
+  />
+
   <circle
     cx="${center}"
-    cy="${center}"
+    cy="${center - 6}"
     r="${radius}"
     fill="none"
     stroke="#e6e6e6"
     stroke-width="${strokeWidth}"
   />
 
-  <!-- Anello di progresso -->
   <circle
     cx="${center}"
-    cy="${center}"
+    cy="${center - 6}"
     r="${radius}"
     fill="none"
     stroke="${color}"
     stroke-width="${strokeWidth}"
     stroke-linecap="round"
     stroke-dasharray="${progress} ${circumference - progress}"
-    transform="rotate(-90 ${center} ${center})"
+    transform="rotate(-90 ${center} ${center - 6})"
   />
 
-  <!-- Testo punteggio -->
   <text
     x="${center}"
-    y="${center + 8}"
+    y="${center - 2}"
     text-anchor="middle"
     class="score"
   >
     ${rounded}
   </text>
 
-  <!-- Label sotto -->
   <text
     x="${center}"
-    y="${size - 10}"
+    y="${size - 22}"
     text-anchor="middle"
     class="label"
   >
@@ -96,6 +117,7 @@ function createGaugeSVG(label, score) {
 </svg>
 `.trim();
 }
+
 
 async function runLighthouseOnUrl(url) {
   const chrome = await chromeLauncher.launch({
