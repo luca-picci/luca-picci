@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-const lighthouse = require('lighthouse');
 const chromeLauncher = require('chrome-launcher');
+const lighthouse = require('lighthouse/core/index.cjs');
 
 const sitesEnv = process.env.LIGHTHOUSE_SITES;
 
@@ -22,50 +22,92 @@ if (sites.length === 0) {
 
 const outputDir = path.join(process.cwd(), 'lighthouse');
 if (!fs.existsSync(outputDir)) {
-  fs.mkdirSync(outputDir);
+  fs.mkdirSync(outputDir, { recursive: true });
 }
 
-function createBadgeSVG(label, score) {
+function scoreColor(score) {
+  if (score >= 90) return '#0cce6b';    
+  if (score >= 50) return '#ffa400';    
+  return '#ff4e42';                     
+}
+
+function createGaugeSVG(label, score) {
   const rounded = Math.round(score);
-  const text = `${label}: ${rounded}`;
-  const labelColor = '#555';
+  const color = scoreColor(rounded);
 
-  let valueColor = '#e05d44'; 
-  if (rounded >= 90) valueColor = '#4c1';      
-  else if (rounded >= 50) valueColor = '#dfb317'; 
-
-  const labelWidth = 60;
-  const valueWidth = 60;
-  const totalWidth = labelWidth + valueWidth;
+  const size = 120;
+  const center = size / 2;
+  const radius = 45;
+  const strokeWidth = 10;
+  const circumference = 2 * Math.PI * radius;
+  const progress = (rounded / 100) * circumference;
 
   return `
-<svg xmlns="http://www.w3.org/2000/svg" width="${totalWidth}" height="20" role="img" aria-label="${text}">
-  <linearGradient id="smooth" x2="0" y2="100%">
-    <stop offset="0" stop-opacity=".7" stop-color="#fff"/>
-    <stop offset=".1" stop-opacity=".1" stop-color="#aaa"/>
-    <stop offset=".9" stop-opacity=".3"/>
-    <stop offset="1" stop-opacity=".5"/>
-  </linearGradient>
-  <mask id="round">
-    <rect width="${totalWidth}" height="20" rx="3" fill="#fff"/>
-  </mask>
-  <g mask="url(#round)">
-    <rect width="${labelWidth}" height="20" fill="${labelColor}"/>
-    <rect x="${labelWidth}" width="${valueWidth}" height="20" fill="${valueColor}"/>
-    <rect width="${totalWidth}" height="20" fill="url(#smooth)"/>
-  </g>
-  <g fill="#fff" text-anchor="middle"
-     font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="11">
-    <text x="${labelWidth / 2}" y="14">${label}</text>
-    <text x="${labelWidth + valueWidth / 2}" y="14">${rounded}</text>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" role="img" aria-label="${label} score ${rounded}">
+  <defs>
+    <style>
+      .label { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 11px; fill: #555; }
+      .score { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 26px; font-weight: 600; fill: #202124; }
+    </style>
+  </defs>
+
+  <!-- Sfondo -->
+  <circle
+    cx="${center}"
+    cy="${center}"
+    r="${radius}"
+    fill="none"
+    stroke="#e6e6e6"
+    stroke-width="${strokeWidth}"
+  />
+
+  <!-- Anello di progresso -->
+  <circle
+    cx="${center}"
+    cy="${center}"
+    r="${radius}"
+    fill="none"
+    stroke="${color}"
+    stroke-width="${strokeWidth}"
+    stroke-linecap="round"
+    stroke-dasharray="${progress} ${circumference - progress}"
+    transform="rotate(-90 ${center} ${center})"
+  />
+
+  <!-- Testo punteggio -->
+  <text
+    x="${center}"
+    y="${center + 8}"
+    text-anchor="middle"
+    class="score"
+  >
+    ${rounded}
+  </text>
+
+  <!-- Label sotto -->
+  <text
+    x="${center}"
+    y="${size - 10}"
+    text-anchor="middle"
+    class="label"
+  >
+    ${label}
+  </text>
 </svg>
 `.trim();
 }
 
 async function runLighthouseOnUrl(url) {
-  const chrome = await chromeLauncher.launch({ chromeFlags: ['--headless'] });
-  const options = { logLevel: 'error', output: 'json', onlyCategories: ['performance', 'accessibility', 'best-practices', 'seo'], port: chrome.port };
+  const chrome = await chromeLauncher.launch({
+    chromeFlags: ['--headless', '--no-sandbox', '--disable-gpu'],
+  });
+
+  const options = {
+    logLevel: 'error',
+    output: 'json',
+    onlyCategories: ['performance', 'accessibility', 'best-practices', 'seo'],
+    port: chrome.port,
+  };
 
   try {
     const runnerResult = await lighthouse(url, options);
@@ -94,6 +136,7 @@ async function runLighthouseOnUrl(url) {
     console.log(`Eseguo Lighthouse su: ${url}`);
     try {
       const scores = await runLighthouseOnUrl(url);
+      console.log('Punteggi:', scores);
       totals.performance += scores.performance;
       totals.accessibility += scores.accessibility;
       totals.bestPractices += scores.bestPractices;
@@ -116,19 +159,21 @@ async function runLighthouseOnUrl(url) {
     seo: totals.seo / count,
   };
 
-  const badges = [
+  console.log('Medie:', averages);
+
+  const gauges = [
     { filename: 'performance.svg', label: 'Performance', score: averages.performance },
     { filename: 'accessibility.svg', label: 'Accessibility', score: averages.accessibility },
     { filename: 'best-practices.svg', label: 'Best Practices', score: averages.bestPractices },
     { filename: 'seo.svg', label: 'SEO', score: averages.seo },
   ];
 
-  for (const badge of badges) {
-    const svg = createBadgeSVG(badge.label, badge.score);
-    const filePath = path.join(outputDir, badge.filename);
+  for (const g of gauges) {
+    const svg = createGaugeSVG(g.label, g.score);
+    const filePath = path.join(outputDir, g.filename);
     fs.writeFileSync(filePath, svg, 'utf8');
-    console.log(`Creato badge: ${filePath}`);
+    console.log(`Creato gauge: ${filePath}`);
   }
 
-  console.log('Lighthouse completato, badge aggiornati.');
+  console.log('Lighthouse completato, gauge aggiornati.');
 })();
