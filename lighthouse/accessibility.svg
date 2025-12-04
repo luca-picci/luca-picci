@@ -4,7 +4,7 @@
      role="img"
      aria-labelledby="accessibility-title accessibility-desc">
   <title id="accessibility-title">Accessibility</title>
-  <desc id="accessibility-desc">Accessibility score 100 of 100</desc>
+  <desc id="accessibility-desc">Accessibility score 98 of 100</desc>
 
   <defs>
     <filter id="accessibility-shadow" x="-30%" y="-30%" width="160%" height="160%">
@@ -106,7 +106,7 @@
     stroke="url(#accessibility-arc-gradient)"
     stroke-width="11"
     stroke-linecap="round"
-    stroke-dasharray="314.1592653589793 0"
+    stroke-dasharray="307.87608005179976 6.283185307179565"
     transform="rotate(-90 80 91)"
   />
 
@@ -116,6 +116,6 @@
     text-anchor="middle"
     class="lh-score"
   >
-    100
+    98
   </text>
 </svg>
