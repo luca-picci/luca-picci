@@ -22,9 +22,9 @@ function clampScore(v) {
 }
 
 function scoreColor(score) {
-  if (score >= 90) return '#0cce6b';
-  if (score >= 50) return '#ffa400';
-  return '#ff4e42';
+  if (score >= 90) return '#22c55e';
+  if (score >= 50) return '#f97316';
+  return '#ef4444';
 }
 
 function createGaugeSVG(label, score) {
@@ -33,12 +33,11 @@ function createGaugeSVG(label, score) {
 
   const size = 160;
   const padding = 14;
-  const labelArea = 22;
-  const innerGap = 6;
+  const titleArea = 22;
 
-  const usableHeight = size - padding * 2 - labelArea - innerGap;
+  const usableHeight = size - padding * 2 - titleArea;
   const centerX = size / 2;
-  const centerY = padding + usableHeight / 2;
+  const centerY = padding + titleArea + usableHeight / 2;
 
   const radius = 50;
   const strokeWidth = 11;
@@ -48,7 +47,6 @@ function createGaugeSVG(label, score) {
   const idBase = label.toLowerCase().replace(/[^a-z0-9]+/g, '-');
   const shadowId = `${idBase}-shadow`;
   const arcGradientId = `${idBase}-arc-gradient`;
-  const bgGradientId = `${idBase}-bg-gradient`;
 
   return `
 <svg xmlns="http://www.w3.org/2000/svg"
@@ -64,28 +62,56 @@ function createGaugeSVG(label, score) {
       <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#00000040"/>
     </filter>
 
-    <radialGradient id="${bgGradientId}" cx="50%" cy="50%" r="65%">
-      <stop offset="0%" stop-color="#ffffff" />
-      <stop offset="100%" stop-color="#f3f4f6" />
-    </radialGradient>
-
     <linearGradient id="${arcGradientId}" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="${color}" stop-opacity="0.8" />
+      <stop offset="0%" stop-color="${color}" stop-opacity="0.85" />
       <stop offset="100%" stop-color="${color}" stop-opacity="1" />
     </linearGradient>
 
     <style>
-      .lh-label {
+      .lh-card {
+        fill: #ffffff;
+        stroke: #e5e7eb;
+      }
+      .lh-circle-bg {
+        fill: #f9fafb;
+        stroke: #e5e7eb;
+      }
+      .lh-circle-inner {
+        fill: #ffffff;
+      }
+      .lh-title {
         font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         font-size: 13px;
-        font-weight: 500;
-        fill: #5f6368;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        fill: #6b7280;
       }
       .lh-score {
         font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         font-size: 30px;
         font-weight: 600;
         fill: #111827;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .lh-card {
+          fill: #020617;
+          stroke: #1f2933;
+        }
+        .lh-circle-bg {
+          fill: #020617;
+          stroke: #374151;
+        }
+        .lh-circle-inner {
+          fill: #020617;
+        }
+        .lh-title {
+          fill: #9ca3af;
+        }
+        .lh-score {
+          fill: #e5e7eb;
+        }
       }
     </style>
   </defs>
@@ -96,24 +122,31 @@ function createGaugeSVG(label, score) {
     width="${size - (padding - 2) * 2}"
     height="${size - (padding - 2) * 2}"
     rx="18"
-    fill="#ffffff"
-    stroke="#e5e7eb"
+    class="lh-card"
     filter="url(#${shadowId})"
   />
+
+  <text
+    x="${centerX}"
+    y="${padding + 12}"
+    text-anchor="middle"
+    class="lh-title"
+  >
+    ${label}
+  </text>
 
   <circle
     cx="${centerX}"
     cy="${centerY}"
     r="${radius}"
-    fill="url(#${bgGradientId})"
-    stroke="#e5e7eb"
+    class="lh-circle-bg"
     stroke-width="${strokeWidth}"
   />
   <circle
     cx="${centerX}"
     cy="${centerY}"
     r="${radius - strokeWidth + 2}"
-    fill="#ffffff"
+    class="lh-circle-inner"
   />
 
   <circle
@@ -135,15 +168,6 @@ function createGaugeSVG(label, score) {
     class="lh-score"
   >
     ${rounded}
-  </text>
-
-  <text
-    x="${centerX}"
-    y="${size - padding}"
-    text-anchor="middle"
-    class="lh-label"
-  >
-    ${label}
   </text>
 </svg>
 `.trim();
