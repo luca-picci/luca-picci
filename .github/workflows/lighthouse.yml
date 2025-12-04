@@ -1,0 +1,49 @@
+name: Lighthouse Scores
+
+on:
+  workflow_dispatch:   
+  schedule:
+    - cron: "0 3 * * *" 
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write   
+
+    env:
+      LIGHTHOUSE_SITES: |
+        https://www.comune.villasalto.ca.it
+        # 
+        # 
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Lighthouse & dependencies
+        run: |
+          npm init -y
+          npm install lighthouse chrome-launcher
+
+      - name: Run Lighthouse for configured sites
+        run: |
+          node scripts/run-lighthouse.js
+
+      - name: Commit updated Lighthouse badges
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add lighthouse/*.svg || echo "No badges to add"
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update Lighthouse badges"
+            git push
+          fi
