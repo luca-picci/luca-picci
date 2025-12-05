@@ -4,7 +4,7 @@
      role="img"
      aria-labelledby="performance-title performance-desc">
   <title id="performance-title">Performance</title>
-  <desc id="performance-desc">Performance score 85 of 100</desc>
+  <desc id="performance-desc">Performance score 96 of 100</desc>
 
   <defs>
     <filter id="performance-shadow" x="-30%" y="-30%" width="160%" height="160%">
@@ -12,8 +12,8 @@
     </filter>
 
     <linearGradient id="performance-arc-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f97316" stop-opacity="0.85" />
-      <stop offset="100%" stop-color="#f97316" stop-opacity="1" />
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#22c55e" stop-opacity="1" />
     </linearGradient>
 
     <style>
@@ -106,7 +106,7 @@
     stroke="url(#performance-arc-gradient)"
     stroke-width="11"
     stroke-linecap="round"
-    stroke-dasharray="267.0353755551324 47.12388980384691"
+    stroke-dasharray="301.59289474462014 12.566370614359187"
     transform="rotate(-90 80 91)"
   />
 
@@ -116,6 +116,6 @@
     text-anchor="middle"
     class="lh-score"
   >
-    85
+    96
   </text>
 </svg>
