@@ -4,7 +4,7 @@
      role="img"
      aria-labelledby="performance-title performance-desc">
   <title id="performance-title">Performance</title>
-  <desc id="performance-desc">Performance score 94 of 100</desc>
+  <desc id="performance-desc">Performance score 96 of 100</desc>
 
   <defs>
     <filter id="performance-shadow" x="-30%" y="-30%" width="160%" height="160%">
@@ -106,7 +106,7 @@
     stroke="url(#performance-arc-gradient)"
     stroke-width="11"
     stroke-linecap="round"
-    stroke-dasharray="295.3097094374406 18.84955592153875"
+    stroke-dasharray="301.59289474462014 12.566370614359187"
     transform="rotate(-90 80 91)"
   />
 
@@ -116,6 +116,6 @@
     text-anchor="middle"
     class="lh-score"
   >
-    94
+    96
   </text>
 </svg>
