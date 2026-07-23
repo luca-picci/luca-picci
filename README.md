@@ -63,9 +63,9 @@
 
 # 📊 GitHub Stats
 
-![](https://github-readme-stats.vercel.app/api?username=lucapicci&show_icons=true&theme=transparent&hide_border=true)
+![](https://github-readme-stats.vercel.app/api?username=luca-picci&show_icons=true&theme=transparent&hide_border=true)
 
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=lucapicci&layout=compact&theme=transparent&hide_border=true)
+![](https://github-readme-stats.vercel.app/api/top-langs/?username=luca-picci&layout=compact&theme=transparent&hide_border=true)
 
 ---
 
