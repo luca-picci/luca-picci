@@ -2,20 +2,23 @@
 
 ### Web Developer · OpenCms Specialist · Accessibility Advocate
 
-I build and maintain accessible, user-centered web applications, with a strong focus on **OpenCms solutions for the Italian Public Administration**.
+I build accessible, maintainable and user-centered digital services, specializing in **OpenCms solutions for the Italian Public Administration**.
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Luca_Picci-0A66C2?style=flat\&logo=linkedin\&logoColor=white)](https://www.linkedin.com/in/luca-picci/)
+My work focuses on reusable frontend architecture, effective content-management workflows and interfaces designed for both end users and CMS editors.
+
+[![LinkedIn: Luca Picci](https://img.shields.io/badge/LinkedIn-Luca_Picci-0A66C2?style=flat\&logo=linkedin\&logoColor=white)](https://www.linkedin.com/in/luca-picci/)
 
 ---
 
 ## 👨‍💻 About Me
 
-* 💼 Web Developer experienced in building and maintaining production applications based on **OpenCms**.
-* 🏛️ Currently working on digital services for the **Italian Public Administration**.
-* ♿ Focused on accessibility, usability and maintainable frontend architecture.
-* 🧩 Experienced in OpenCms module development, CMS customization and editor-oriented interfaces.
-* 🌱 Expanding my knowledge of Java, backend development and modern frontend technologies.
-* 🤝 Open to collaborating on OpenCms modules, CMS extensions and workflow-improvement tools.
+💼 Web Developer experienced in building and maintaining production applications based on **OpenCms**.<br>
+🏛️ Currently working on digital services for the **Italian Public Administration**.<br>
+♿ Focused on accessibility, usability and maintainable frontend architecture.<br>
+🧩 Experienced in OpenCms module development, CMS customization and editor-oriented interfaces.<br>
+⚙️ Interested in improving content-management workflows and building reusable frontend components.<br>
+🌱 Expanding my knowledge of Java, backend development and modern frontend technologies.<br>
+🤝 Open to collaborating on OpenCms modules, CMS extensions and workflow-improvement tools.
 
 ---
 
@@ -23,14 +26,15 @@ I build and maintain accessible, user-centered web applications, with a strong f
 
 ### [OpenCms Design Comuni Module](https://github.com/coranto-informatica/design-comuni-opencms-module)
 
-OpenCms theme and modules for Italian municipality websites, designed around the requirements of public digital services.
+A collection of OpenCms themes and modules for Italian municipality websites, developed around the needs of public digital services, content editors and citizens.
 
-**Main areas of contribution:**
+**My main areas of contribution include:**
 
 * OpenCms module development and maintenance
-* Frontend integration and reusable components
+* Frontend integration and reusable component development
 * Accessibility and usability improvements
-* CMS configuration and editor-oriented functionality
+* CMS configuration and customization
+* Editor-oriented features and interfaces
 * Content-management workflow optimization
 
 ---
@@ -56,7 +60,7 @@ OpenCms theme and modules for Italian municipality websites, designed around the
 ![OpenCms](https://img.shields.io/badge/OpenCms-003082?style=flat)
 ![WordPress](https://img.shields.io/badge/WordPress-117AC9?style=flat\&logo=wordpress\&logoColor=white)
 
-### Backend & Databases
+### Backend and Databases
 
 ![Apache](https://img.shields.io/badge/Apache-D42029?style=flat\&logo=apache\&logoColor=white)
 ![Apache Tomcat](https://img.shields.io/badge/Apache_Tomcat-F8DC75?style=flat\&logo=apachetomcat\&logoColor=black)
@@ -70,34 +74,72 @@ OpenCms theme and modules for Italian municipality websites, designed around the
 
 ---
 
-## 📊 GitHub Stats
+## 📊 GitHub Activity
 
-<p>
-  <img
-    height="165"
-    src="https://github-stats-extended.vercel.app/api?username=luca-picci&show_icons=true&theme=transparent&hide_border=true"
-    alt="Luca Picci's GitHub statistics"
-  />
-  <img
-    height="165"
-    src="https://github-stats-extended.vercel.app/api/top-langs/?username=luca-picci&layout=compact&theme=transparent&hide_border=true&langs_count=6"
-    alt="Luca Picci's most used languages"
-  />
+Most of my professional development takes place within private repositories and organization-owned projects. The cards below provide an aggregate overview of my GitHub activity and the technologies I work with.
+
+<p align="center">
+  <a href="https://github.com/luca-picci">
+    <img
+      width="100%"
+      src="./github-stats/0-profile-details.svg"
+      alt="Overview of Luca Picci's GitHub contributions"
+    />
+  </a>
 </p>
 
-> GitHub statistics only reflect activity visible through public repositories and may not fully represent professional or organization-based work.
+<p align="center">
+  <a href="https://github.com/luca-picci">
+    <img
+      width="49%"
+      src="./github-stats/3-stats.svg"
+      alt="Aggregate statistics for Luca Picci's GitHub activity"
+    />
+  </a>
+  <a href="https://github.com/luca-picci?tab=repositories">
+    <img
+      width="49%"
+      src="./github-stats/2-most-commit-language.svg"
+      alt="Most used languages across Luca Picci's GitHub contributions"
+    />
+  </a>
+</p>
+
+<p align="center">
+  <sub>
+    Private contributions are included only as aggregate statistics. Repository names, source code and other private information are not exposed.
+  </sub>
+</p>
 
 ---
 
 ## 🔥 Lighthouse Overview
 
-Accessibility and performance are integral parts of my development workflow.
+Accessibility, performance and code quality are integral parts of my development workflow.
 
-<p>
-  <img src="./lighthouse/performance.svg" alt="Lighthouse performance score" />
-  <img src="./lighthouse/accessibility.svg" alt="Lighthouse accessibility score" />
-  <img src="./lighthouse/best-practices.svg" alt="Lighthouse best practices score" />
-  <img src="./lighthouse/seo.svg" alt="Lighthouse SEO score" />
+<p align="center">
+  <img
+    src="./lighthouse/performance.svg"
+    alt="Lighthouse performance score"
+  />
+  <img
+    src="./lighthouse/accessibility.svg"
+    alt="Lighthouse accessibility score"
+  />
+  <img
+    src="./lighthouse/best-practices.svg"
+    alt="Lighthouse best practices score"
+  />
+  <img
+    src="./lighthouse/seo.svg"
+    alt="Lighthouse SEO score"
+  />
+</p>
+
+<p align="center">
+  <sub>
+    Scores are generated automatically from Lighthouse audits and updated through GitHub Actions.
+  </sub>
 </p>
 
 ---
@@ -109,6 +151,7 @@ I'm interested in collaborating on:
 * OpenCms modules and extensions
 * Accessible public digital services
 * CMS editor-experience improvements
-* Frontend components and workflow automation
+* Reusable frontend components
+* Content workflows and development automation
 
-[Connect with me on LinkedIn](https://www.linkedin.com/in/luca-picci/)
+[Connect with me on LinkedIn →](https://www.linkedin.com/in/luca-picci/)
