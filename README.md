@@ -2,23 +2,24 @@
 
 ### Web Developer · OpenCms Specialist · Accessibility Advocate
 
-I build accessible, maintainable and user-centered digital services, specializing in **OpenCms solutions for the Italian Public Administration**.
+I build accessible, maintainable and user-centered digital services, with a strong focus on **OpenCms solutions and web development for the Italian Public Administration**.
 
-My work focuses on reusable frontend architecture, effective content-management workflows and interfaces designed for both end users and CMS editors.
+My work combines frontend development, CMS customization and content-management workflows, with particular attention to reusable components, accessibility and the experience of both end users and content editors.
 
-[![LinkedIn: Luca Picci](https://img.shields.io/badge/LinkedIn-Luca_Picci-0A66C2?style=flat\&logo=linkedin\&logoColor=white)](https://www.linkedin.com/in/luca-picci/)
+[![LinkedIn: Luca Picci](https://img.shields.io/badge/LinkedIn-Luca_Picci-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/luca-picci/)
 
 ---
 
 ## 👨‍💻 About Me
 
-💼 Web Developer experienced in building and maintaining production applications based on **OpenCms**.<br>
-🏛️ Currently working on digital services for the **Italian Public Administration**.<br>
+💼 Web Developer with hands-on experience building and maintaining **production web applications**.<br>
+🏛️ Experienced in developing digital services for the **Italian Public Administration**.<br>
+🧩 Specialized in **OpenCms module development, customization and integration**.<br>
+🎨 Experienced across both frontend development and CMS/editor-facing interfaces.<br>
 ♿ Focused on accessibility, usability and maintainable frontend architecture.<br>
-🧩 Experienced in OpenCms module development, CMS customization and editor-oriented interfaces.<br>
-⚙️ Interested in improving content-management workflows and building reusable frontend components.<br>
-🌱 Expanding my knowledge of Java, backend development and modern frontend technologies.<br>
-🤝 Open to collaborating on OpenCms modules, CMS extensions and workflow-improvement tools.
+⚙️ Interested in reusable components, efficient content-management workflows and practical digital solutions.<br>
+🌱 Continuously expanding my knowledge of **Java, backend development and modern frontend technologies**.<br>
+🤝 Open to collaborating on OpenCms modules, CMS extensions, accessible digital services and developer tools.
 
 ---
 
@@ -43,34 +44,34 @@ A collection of OpenCms themes and modules for Italian municipality websites, de
 
 ### Languages
 
-![Java](https://img.shields.io/badge/Java-ED8B00?style=flat\&logo=openjdk\&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=flat\&logo=javascript\&logoColor=F7DF1E)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat\&logo=typescript\&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat\&logo=html5\&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat\&logo=css3\&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=flat&logo=javascript&logoColor=F7DF1E)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
 
 ### Frontend
 
-![Angular](https://img.shields.io/badge/Angular-DD0031?style=flat\&logo=angular\&logoColor=white)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=flat\&logo=bootstrap\&logoColor=white)
-![jQuery](https://img.shields.io/badge/jQuery-0769AD?style=flat\&logo=jquery\&logoColor=white)
+![Angular](https://img.shields.io/badge/Angular-DD0031?style=flat&logo=angular&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=flat&logo=bootstrap&logoColor=white)
+![jQuery](https://img.shields.io/badge/jQuery-0769AD?style=flat&logo=jquery&logoColor=white)
 
 ### CMS
 
 ![OpenCms](https://img.shields.io/badge/OpenCms-003082?style=flat)
-![WordPress](https://img.shields.io/badge/WordPress-117AC9?style=flat\&logo=wordpress\&logoColor=white)
+![WordPress](https://img.shields.io/badge/WordPress-117AC9?style=flat&logo=wordpress&logoColor=white)
 
 ### Backend and Databases
 
-![Apache](https://img.shields.io/badge/Apache-D42029?style=flat\&logo=apache\&logoColor=white)
-![Apache Tomcat](https://img.shields.io/badge/Apache_Tomcat-F8DC75?style=flat\&logo=apachetomcat\&logoColor=black)
-![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=flat\&logo=mariadb\&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat\&logo=mysql\&logoColor=white)
+![Apache](https://img.shields.io/badge/Apache-D42029?style=flat&logo=apache&logoColor=white)
+![Apache Tomcat](https://img.shields.io/badge/Apache_Tomcat-F8DC75?style=flat&logo=apachetomcat&logoColor=black)
+![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=flat&logo=mariadb&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white)
 
 ### Tools
 
-![Git](https://img.shields.io/badge/Git-F05032?style=flat\&logo=git\&logoColor=white)
-![Figma](https://img.shields.io/badge/Figma-F24E1E?style=flat\&logo=figma\&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white)
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=flat&logo=figma&logoColor=white)
 
 ---
 
