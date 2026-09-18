@@ -4,7 +4,7 @@
      role="img"
      aria-labelledby="best-practices-title best-practices-desc">
   <title id="best-practices-title">Best Practices</title>
-  <desc id="best-practices-desc">Best Practices score 100 of 100</desc>
+  <desc id="best-practices-desc">Best Practices score 99 of 100</desc>
 
   <defs>
     <filter id="best-practices-shadow" x="-30%" y="-30%" width="160%" height="160%">
@@ -106,7 +106,7 @@
     stroke="url(#best-practices-arc-gradient)"
     stroke-width="11"
     stroke-linecap="round"
-    stroke-dasharray="314.1592653589793 0"
+    stroke-dasharray="311.01767270538954 3.1415926535897825"
     transform="rotate(-90 80 91)"
   />
 
@@ -116,6 +116,6 @@
     text-anchor="middle"
     class="lh-score"
   >
-    100
+    99
   </text>
 </svg>
